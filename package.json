@@ -1,0 +1,17 @@
+{
+  "name": "thebharatai",
+  "version": "1.0.0",
+  "description": "India's #1 free AI-powered government scheme eligibility engine",
+  "private": true,
+  "scripts": {
+    "setup": "npm install && node scripts/generate-assets.js",
+    "dev": "npx live-server --port=3000 --host=localhost --open=/index.html --ignore=node_modules,scripts,.git",
+    "start": "npm run dev",
+    "generate": "node scripts/generate-assets.js",
+    "validate": "node scripts/validate.js"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "pngjs": "^7.0.0"
+  }
+}

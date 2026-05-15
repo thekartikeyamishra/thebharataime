@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>You're Offline – TheBharatAI</title>
+<meta name="description" content="You appear to be offline. Connect to the internet to access TheBharatAI government scheme eligibility checker.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230F1729'/><path d='M7 24L16 8L25 24' stroke='%23FF6B35' stroke-width='2.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/><circle cx='16' cy='15.5' r='2.5' fill='%2300C896'/></svg>" type="image/svg+xml">
+<link rel="manifest" href="/manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family:'DM Sans',-apple-system,sans-serif;
+  background:#0F1729;
+  color:#fff;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  min-height:100vh;
+  padding:28px 20px;
+  text-align:center;
+  -webkit-font-smoothing:antialiased;
+  overflow:hidden;
+}
+/* Animated bg */
+.bg{position:fixed;inset:0;z-index:0;pointer-events:none;}
+.bg-glow{position:absolute;border-radius:50%;filter:blur(80px);}
+.bg-glow-1{top:-10%;left:-10%;width:60%;height:60%;background:radial-gradient(ellipse,rgba(255,107,53,.06),transparent 70%);}
+.bg-glow-2{bottom:-10%;right:-10%;width:55%;height:55%;background:radial-gradient(ellipse,rgba(0,200,150,.05),transparent 70%);}
+/* Content */
+.content{position:relative;z-index:1;max-width:480px;width:100%;}
+/* Wifi icon animation */
+.wifi-wrap{
+  width:100px;height:100px;border-radius:50%;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.1);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 28px;
+  animation:wifiPulse 2.5s ease infinite;
+  position:relative;
+}
+@keyframes wifiPulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(255,107,53,.2);}
+  50%{box-shadow:0 0 0 18px rgba(255,107,53,.0);}
+}
+.wifi-icon{font-size:2.8rem;}
+/* Strikethrough line */
+.wifi-wrap::after{
+  content:'';position:absolute;
+  width:3px;height:90px;
+  background:rgba(255,107,53,.6);
+  border-radius:2px;
+  transform:rotate(45deg);
+  top:50%;left:50%;
+  margin-top:-45px;margin-left:-1.5px;
+  animation:strikePulse 2.5s ease infinite;
+}
+@keyframes strikePulse{0%,100%{opacity:.6}50%{opacity:.9}}
+/* Logo */
+.logo{
+  display:flex;align-items:center;justify-content:center;gap:9px;
+  font-weight:800;font-size:1.15rem;color:#fff;
+  text-decoration:none;margin-bottom:32px;
+}
+.logo span{color:#FF6B35;}
+.logo-mark{
+  width:32px;height:32px;border-radius:8px;background:rgba(255,255,255,.08);
+  display:flex;align-items:center;justify-content:center;
+}
+/* Text */
+.offline-title{
+  font-family:'Fraunces',serif;
+  font-size:clamp(1.8rem,5vw,2.6rem);
+  font-weight:900;
+  color:#fff;
+  line-height:1.15;
+  margin-bottom:12px;
+  letter-spacing:-.02em;
+}
+.offline-sub{
+  color:rgba(255,255,255,.48);
+  font-size:.95rem;line-height:1.72;
+  margin-bottom:36px;
+}
+.offline-sub strong{color:rgba(255,255,255,.8);}
+/* Offline tips */
+.tips{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:16px;
+  padding:22px 20px;
+  margin-bottom:30px;
+  text-align:left;
+}
+.tips-title{
+  font-size:.65rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(255,255,255,.3);margin-bottom:14px;
+}
+.tip{
+  display:flex;align-items:flex-start;gap:12px;margin-bottom:12px;
+}
+.tip:last-child{margin-bottom:0;}
+.tip-icon{font-size:1.1rem;flex-shrink:0;margin-top:1px;}
+.tip-text{font-size:.86rem;color:rgba(255,255,255,.55);line-height:1.6;}
+/* Retry button */
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:14px 30px;border-radius:50px;
+  font-size:.9rem;font-weight:600;
+  cursor:pointer;border:none;font-family:'DM Sans',sans-serif;
+  transition:transform .22s cubic-bezier(.34,1.56,.64,1),box-shadow .22s;
+  -webkit-tap-highlight-color:transparent;text-decoration:none;
+}
+.btn-primary{
+  background:linear-gradient(135deg,#FF6B35,#E55A25);
+  color:#fff;
+  box-shadow:0 4px 18px rgba(255,107,53,.4);
+  width:100%;justify-content:center;
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(255,107,53,.52);}
+.btn-primary:active{transform:scale(.95);}
+/* Status dot */
+.status-row{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  font-size:.74rem;color:rgba(255,255,255,.32);
+  margin-top:22px;
+}
+.status-dot{
+  width:7px;height:7px;border-radius:50%;background:#F44336;
+  animation:statusBlink 1.5s ease infinite;
+}
+@keyframes statusBlink{0%,100%{opacity:1;}50%{opacity:.3;}}
+.status-dot.online{background:#00C896;animation:none;}
+/* Footer */
+.footer{
+  position:fixed;bottom:0;left:0;right:0;
+  padding:14px 20px;
+  border-top:1px solid rgba(255,255,255,.05);
+  text-align:center;z-index:1;
+}
+.footer p{font-size:.7rem;color:rgba(255,255,255,.2);}
+.footer a{color:rgba(255,107,53,.6);}
+@media(max-width:480px){
+  .wifi-wrap{width:80px;height:80px;}
+  .wifi-wrap::after{height:72px;margin-top:-36px;}
+  .wifi-icon{font-size:2.2rem;}
+}
+</style>
+</head>
+<body>
+<div class="bg" aria-hidden="true">
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+</div>
+
+<div class="content">
+  <a href="/" class="logo" aria-label="TheBharatAI – Home">
+    <div class="logo-mark" aria-hidden="true">
+      <svg width="16" height="16" viewBox="0 0 20 20" fill="none">
+        <path d="M3 16L10 4L17 16" stroke="#FF6B35" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="10" cy="10.5" r="2" fill="#00C896"/>
+      </svg>
+    </div>
+    The<span>Bharat</span>AI
+  </a>
+
+  <div class="wifi-wrap" aria-hidden="true">
+    <div class="wifi-icon">📶</div>
+  </div>
+
+  <h1 class="offline-title">You're Offline</h1>
+  <p class="offline-sub">
+    Connect to the internet to check your eligibility for
+    <strong>1,500+ government schemes</strong> worth ₹2,50,000+.
+    The Bharat Haq Engine needs a live connection to serve fresh, verified data.
+  </p>
+
+  <div class="tips">
+    <div class="tips-title">While you wait for connection</div>
+    <div class="tip">
+      <div class="tip-icon">📶</div>
+      <div class="tip-text">Check your WiFi or mobile data connection. Switch between WiFi and mobile data if one isn't working.</div>
+    </div>
+    <div class="tip">
+      <div class="tip-icon">✈️</div>
+      <div class="tip-text">Disable Airplane mode if it's turned on. Even 2G/3G works fine for TheBharatAI.</div>
+    </div>
+    <div class="tip">
+      <div class="tip-icon">🔄</div>
+      <div class="tip-text">Once connected, tap "Try Again" — the page will reload instantly with all 1,500+ schemes.</div>
+    </div>
+    <div class="tip">
+      <div class="tip-icon">📲</div>
+      <div class="tip-text">Install TheBharatAI as an app for faster loading and a better offline experience next time.</div>
+    </div>
+  </div>
+
+  <button class="btn btn-primary" onclick="retryConnection()" id="retryBtn" aria-label="Try reconnecting">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+      <polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/>
+      <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+    </svg>
+    <span id="retryTxt">Try Again</span>
+  </button>
+
+  <div class="status-row" role="status" aria-live="polite">
+    <div class="status-dot" id="statusDot"></div>
+    <span id="statusTxt">No internet connection</span>
+  </div>
+</div>
+
+<div class="footer">
+  <p>
+    © 2025–2026 TheBharatAI · NOT affiliated with Govt of India ·
+    <a href="/disclaimer.html">Disclaimer</a>
+  </p>
+</div>
+
+<script>
+function haptic(ms) {
+  try { if (navigator.vibrate) navigator.vibrate(ms || 8); } catch(e) {}
+}
+
+function retryConnection() {
+  var btn  = document.getElementById('retryBtn');
+  var txt  = document.getElementById('retryTxt');
+  var dot  = document.getElementById('statusDot');
+  var stxt = document.getElementById('statusTxt');
+  txt.textContent = 'Checking…';
+  btn.style.opacity = '.7';
+  btn.disabled = true;
+  haptic(10);
+  setTimeout(function() {
+    if (navigator.onLine) {
+      dot.classList.add('online');
+      stxt.textContent = 'Connected! Redirecting…';
+      txt.textContent = 'Connected!';
+      haptic(20);
+      setTimeout(function() { window.location.reload(); }, 800);
+    } else {
+      txt.textContent = 'Try Again';
+      btn.style.opacity = '1';
+      btn.disabled = false;
+      stxt.textContent = 'Still offline. Please check your connection.';
+      haptic([10, 50, 10]);
+    }
+  }, 1200);
+}
+
+/* Auto-detect when online */
+window.addEventListener('online', function() {
+  var dot  = document.getElementById('statusDot');
+  var stxt = document.getElementById('statusTxt');
+  dot.classList.add('online');
+  stxt.textContent = 'Connected! Reloading…';
+  haptic(15);
+  setTimeout(function() { window.location.reload(); }, 600);
+});
+
+window.addEventListener('offline', function() {
+  var dot  = document.getElementById('statusDot');
+  var stxt = document.getElementById('statusTxt');
+  dot.classList.remove('online');
+  stxt.textContent = 'No internet connection';
+});
+</script>
+</body>
+</html>
