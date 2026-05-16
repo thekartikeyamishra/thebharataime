@@ -1,0 +1,25 @@
+{
+  "name": "thebharatai-whatsapp-bot",
+  "version": "1.0.0",
+  "description": "TheBharatAI WhatsApp Bot — Multilingual govt scheme eligibility over WhatsApp",
+  "private": true,
+  "main": "bot.js",
+  "scripts": {
+    "start":   "node bot.js",
+    "dev":     "node bot.js",
+    "pm2":     "pm2 start bot.js --name bharatai-bot --watch",
+    "logs":    "pm2 logs bharatai-bot",
+    "restart": "pm2 restart bharatai-bot"
+  },
+  "dependencies": {
+    "@hapi/boom":              "^10.0.1",
+    "@whiskeysockets/baileys": "^6.7.5",
+    "pino":                    "^8.21.0",
+    "qrcode-terminal":         "^0.12.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": ["whatsapp-bot", "government-schemes", "india", "hindi", "multilingual"],
+  "author": "Kartikeya Mishra <workmailkartikeya@gmail.com>"
+}

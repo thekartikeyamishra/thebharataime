@@ -1,154 +1,112 @@
 /**
- * TheBharatAI Service Worker
- * Strategy:
- *  - Core shell (HTML, CSS, JS) → Cache-First, then network
- *  - API / dynamic data → Network-First, fallback to cache
- *  - Fonts → Cache-First (long TTL)
- *  - Offline fallback page when network unavailable
+ * TheBharatAI Service Worker v4
+ * File: sw.js
+ * Strategy: Cache-first shell, Network-first lang pages, SWR for HTML
  */
+'use strict';
 
-const CACHE_NAME = 'bharatai-v3';
-const OFFLINE_URL = '/offline.html';
+const SHELL_CACHE  = 'bharatai-shell-v4';
+const PAGES_CACHE  = 'bharatai-pages-v4';
+const STATIC_CACHE = 'bharatai-static-v4';
+const ALL_CACHES   = [SHELL_CACHE, PAGES_CACHE, STATIC_CACHE];
+const OFFLINE_URL  = '/offline.html';
 
-const PRECACHE_URLS = [
-  '/',
-  '/index.html',
-  '/manifest.json',
-  '/offline.html',
-  '/disclaimer.html',
-  '/privacy-policy.html',
-  '/terms.html',
-  '/about.html'
-];
+const SHELL_URLS = ['/','/index.html','/manifest.json','/offline.html','/about.html','/disclaimer.html','/privacy-policy.html','/terms.html','/404.html'];
+const STATIC_URLS = ['/icons/icon-192.png','/icons/icon-512.png','/og-image.png'];
 
-// Install: precache core files
-self.addEventListener('install', function(event) {
+self.addEventListener('install', event => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then(function(cache) {
-      return cache.addAll(PRECACHE_URLS.map(function(url) {
-        return new Request(url, { cache: 'reload' });
-      }));
-    }).then(function() {
-      return self.skipWaiting();
-    })
+    Promise.all([
+      caches.open(SHELL_CACHE).then(c => c.addAll(SHELL_URLS.map(u => new Request(u,{cache:'reload'}))).catch(()=>{})),
+      caches.open(STATIC_CACHE).then(c => c.addAll(STATIC_URLS).catch(()=>{})),
+    ]).then(() => self.skipWaiting())
   );
 });
 
-// Activate: clean old caches
-self.addEventListener('activate', function(event) {
+self.addEventListener('activate', event => {
   event.waitUntil(
-    caches.keys().then(function(cacheNames) {
-      return Promise.all(
-        cacheNames
-          .filter(function(name) { return name !== CACHE_NAME; })
-          .map(function(name) { return caches.delete(name); })
-      );
-    }).then(function() {
-      return self.clients.claim();
-    })
+    caches.keys().then(keys => Promise.all(keys.filter(k => !ALL_CACHES.includes(k)).map(k => caches.delete(k))))
+    .then(() => self.clients.claim())
   );
 });
 
-// Fetch: routing strategy
-self.addEventListener('fetch', function(event) {
-  var request = event.request;
-
-  // Skip non-GET and non-http(s)
-  if(request.method !== 'GET') return;
-  if(!request.url.startsWith('http')) return;
-
-  // Skip AdSense / Google Analytics requests
-  if(
-    request.url.includes('googlesyndication') ||
-    request.url.includes('googletagmanager') ||
-    request.url.includes('doubleclick') ||
-    request.url.includes('google-analytics') ||
-    request.url.includes('adservice.google')
-  ) return;
-
-  // Fonts: Cache-First (long TTL)
-  if(request.url.includes('fonts.googleapis.com') || request.url.includes('fonts.gstatic.com')) {
-    event.respondWith(
-      caches.open(CACHE_NAME).then(function(cache) {
-        return cache.match(request).then(function(cached) {
-          if(cached) return cached;
-          return fetch(request).then(function(response) {
-            cache.put(request, response.clone());
-            return response;
-          });
-        });
-      })
-    );
-    return;
+self.addEventListener('fetch', event => {
+  const {request} = event;
+  const url = new URL(request.url);
+  if (request.method !== 'GET' || url.origin !== location.origin) return;
+  const p = url.pathname;
+  if (p.includes('gtag')||p.includes('analytics')||p.includes('adsbygoogle')||p.includes('googlesyndication')) return;
+  if (p.startsWith('/icons/')||p.endsWith('.png')||p.endsWith('.jpg')||p.endsWith('.svg')||p.endsWith('.woff2')||p.endsWith('.woff')) {
+    event.respondWith(cacheFirst(request, STATIC_CACHE)); return;
   }
-
-  // HTML pages: Network-First, fallback to cache, fallback to offline
-  if(request.headers.get('Accept') && request.headers.get('Accept').includes('text/html')) {
-    event.respondWith(
-      fetch(request)
-        .then(function(response) {
-          var responseClone = response.clone();
-          caches.open(CACHE_NAME).then(function(cache) {
-            cache.put(request, responseClone);
-          });
-          return response;
-        })
-        .catch(function() {
-          return caches.match(request).then(function(cached) {
-            return cached || caches.match(OFFLINE_URL);
-          });
-        })
-    );
-    return;
+  if (p.startsWith('/hi/')||p.startsWith('/mr/')||p.startsWith('/te/')||p.startsWith('/ta/')||p.startsWith('/en/')) {
+    event.respondWith(networkFirst(request, PAGES_CACHE)); return;
   }
-
-  // Everything else: Cache-First
-  event.respondWith(
-    caches.open(CACHE_NAME).then(function(cache) {
-      return cache.match(request).then(function(cached) {
-        var fetchPromise = fetch(request).then(function(response) {
-          if(response && response.status === 200 && response.type === 'basic') {
-            cache.put(request, response.clone());
-          }
-          return response;
-        }).catch(function() {
-          return cached;
-        });
-        return cached || fetchPromise;
-      });
-    })
-  );
+  if (p.endsWith('.xml')||p.endsWith('.txt')) {
+    event.respondWith(networkFirst(request, PAGES_CACHE)); return;
+  }
+  if (p.endsWith('.html')||p==='/') {
+    event.respondWith(staleWhileRevalidate(request, SHELL_CACHE)); return;
+  }
+  event.respondWith(networkFirstWithOffline(request));
 });
 
-// Background sync for report submissions (future)
-self.addEventListener('sync', function(event) {
-  if(event.tag === 'report-scheme') {
-    event.waitUntil(syncReports());
-  }
-});
-
-function syncReports() {
-  // Placeholder for future: retry queued /api/report-scheme POSTs
-  return Promise.resolve();
+async function cacheFirst(request, cacheName) {
+  const cache = await caches.open(cacheName);
+  const cached = await cache.match(request);
+  if (cached) return cached;
+  try {
+    const response = await fetch(request);
+    if (response.ok) cache.put(request, response.clone());
+    return response;
+  } catch { return new Response('Asset unavailable offline', {status:503}); }
 }
 
-// Push notifications (future)
-self.addEventListener('push', function(event) {
-  if(!event.data) return;
-  var data = event.data.json();
-  event.waitUntil(
-    self.registration.showNotification(data.title || 'TheBharatAI', {
-      body: data.body || 'New scheme update available',
-      icon: '/icons/icon-192.png',
-      badge: '/icons/icon-96.png',
-      data: { url: data.url || '/' }
-    })
-  );
+async function networkFirst(request, cacheName) {
+  const cache = await caches.open(cacheName);
+  try {
+    const ctrl = new AbortController();
+    const tid = setTimeout(() => ctrl.abort(), 5000);
+    const response = await fetch(request, {signal: ctrl.signal});
+    clearTimeout(tid);
+    if (response.ok) cache.put(request, response.clone());
+    return response;
+  } catch {
+    const cached = await cache.match(request);
+    if (cached) return cached;
+    return offlineFallback();
+  }
+}
+
+async function staleWhileRevalidate(request, cacheName) {
+  const cache = await caches.open(cacheName);
+  const cached = await cache.match(request);
+  const fetchPromise = fetch(request).then(r => { if(r.ok) cache.put(request, r.clone()); return r; }).catch(()=>{});
+  return cached || await fetchPromise || offlineFallback();
+}
+
+async function networkFirstWithOffline(request) {
+  try { return await fetch(request); }
+  catch {
+    const cache = await caches.open(SHELL_CACHE);
+    return (await cache.match(request)) || offlineFallback();
+  }
+}
+
+async function offlineFallback() {
+  const cache = await caches.open(SHELL_CACHE);
+  return (await cache.match(OFFLINE_URL)) ||
+    new Response('<!DOCTYPE html><html><body style="font-family:sans-serif;text-align:center;padding:48px;background:#0F1729;color:#fff"><h1>📵 Offline</h1><p>Check internet connection</p><a href="/" style="color:#FF6B35">Retry</a></body></html>',
+    {status:200,headers:{'Content-Type':'text/html;charset=utf-8'}});
+}
+
+self.addEventListener('push', event => {
+  if (!event.data) return;
+  const d = event.data.json();
+  event.waitUntil(self.registration.showNotification(d.title||'TheBharatAI',{body:d.body||'New scheme update',icon:'/icons/icon-192.png',badge:'/icons/icon-72.png',tag:'bharatai',data:{url:d.url||'/'}}));
 });
 
-self.addEventListener('notificationclick', function(event) {
+self.addEventListener('notificationclick', event => {
   event.notification.close();
-  event.waitUntil(
-    clients.openWindow(event.notification.data.url || '/')
-  );
+  event.waitUntil(clients.openWindow(event.notification.data?.url||'/'));
 });

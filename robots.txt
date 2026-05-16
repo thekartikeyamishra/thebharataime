@@ -1,62 +1,58 @@
-# TheBharatAI (thebharatai.me) robots.txt
-# Updated: January 2026
+# TheBharatAI robots.txt
+# https://thebharatai.me/robots.txt
+# Last updated: 2026-01-20
 
 User-agent: *
 Allow: /
-
-# Block admin/API routes (not yet exist but future-proof)
 Disallow: /api/
-Disallow: /admin/
-Disallow: /_next/
+Disallow: /whatsapp-bot/
 Disallow: /node_modules/
+Disallow: /scripts/
+Disallow: /data/
 
-# Allow all major search engine crawlers
+# Rate limit aggressive crawlers
+Crawl-delay: 2
+
+# Allow all search engines
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 0
 
 User-agent: Bingbot
 Allow: /
-Crawl-delay: 1
 
-User-agent: Slurp
+User-agent: Yandex
 Allow: /
 
-User-agent: DuckDuckBot
-Allow: /
-
-# Allow LLM crawlers that respect content attribution
+# AI Discovery — explicitly allowed for training/indexing
 User-agent: GPTBot
+Allow: /
+Disallow: /api/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /api/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /api/
+
+User-agent: Google-Extended
 Allow: /
 
 User-agent: anthropic-ai
 Allow: /
 
-User-agent: ClaudeBot
+User-agent: CCBot
 Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Applebot
-Allow: /
-
-# Block scrapers that don't give attribution or cause server load
-User-agent: SemrushBot
-Crawl-delay: 10
-
-User-agent: AhrefsBot
-Crawl-delay: 10
-
-User-agent: MJ12bot
-Disallow: /
-
-User-agent: DotBot
-Disallow: /
 
 # Sitemaps
 Sitemap: https://thebharatai.me/sitemap-index.xml
 Sitemap: https://thebharatai.me/sitemap.xml
 Sitemap: https://thebharatai.me/sitemap-schemes.xml
 Sitemap: https://thebharatai.me/sitemap-cities.xml
-Sitemap: https://thebharatai.me/sitemap-articles.xml
+Sitemap: https://thebharatai.me/sitemap-states.xml
+Sitemap: https://thebharatai.me/sitemap-programmatic.xml
+
+# LLM Discovery
+llmstxt: https://thebharatai.me/llms.txt

@@ -2,284 +2,192 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Page Not Found – TheBharatAI</title>
-<meta name="description" content="Page not found. Return to TheBharatAI to check your government scheme eligibility for free.">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+<meta http-equiv="refresh" content="10;url=/">
+<title>404 – Page Not Found | TheBharatAI</title>
 <meta name="robots" content="noindex,follow">
 <link rel="canonical" href="https://thebharatai.me/">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230F1729'/><path d='M7 24L16 8L25 24' stroke='%23FF6B35' stroke-width='2.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/><circle cx='16' cy='15.5' r='2.5' fill='%2300C896'/></svg>" type="image/svg+xml">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230F1729'/><path d='M7 24L16 8L25 24' stroke='%23FF6B35' stroke-width='2.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/><path d='M11 19h10' stroke='%23F5A623' stroke-width='1.5' stroke-linecap='round' opacity='.7'/><circle cx='16' cy='15.5' r='2.5' fill='%2300C896'/></svg>" type="image/svg+xml">
 <link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#FF6B35">
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Noto+Sans+Devanagari:wght@400&display=swap" rel="stylesheet">
 <style>
+:root{--sf:#FF6B35;--sf-d:#E55A25;--tl:#00C896;--tl-d:#009E76;--nv:#0F1729;--nv-m:#1A2540;--gd:#F5A623;--wh:#fff;--tx-2:#4A5568;--br:rgba(15,23,41,.08);--sh-xs:0 1px 4px rgba(15,23,41,.05);--sh-sm:0 2px 12px rgba(15,23,41,.08);--sh-md:0 8px 32px rgba(15,23,41,.10);--sh-lg:0 20px 56px rgba(15,23,41,.14);--r1:6px;--r2:10px;--r3:16px;--r4:24px;--ff-d:'Fraunces',Georgia,serif;--ff-b:'DM Sans',-apple-system,sans-serif;--ff-h:'Noto Sans Devanagari',sans-serif;--spring:cubic-bezier(.34,1.56,.64,1);--smooth:cubic-bezier(.4,0,.2,1)}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{
-  font-family:'DM Sans',-apple-system,sans-serif;
-  background:#0F1729;
-  color:#fff;
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  -webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
-}
-/* Background */
-.bg{
-  position:fixed;inset:0;pointer-events:none;z-index:0;
-  background:#0F1729;
-}
-.bg-glow-1{position:absolute;top:-20%;left:-10%;width:60%;height:70%;background:radial-gradient(ellipse,rgba(255,107,53,.07) 0%,transparent 70%);filter:blur(60px);}
-.bg-glow-2{position:absolute;bottom:-15%;right:-5%;width:55%;height:65%;background:radial-gradient(ellipse,rgba(0,200,150,.06) 0%,transparent 70%);filter:blur(60px);}
-.bg-grid{position:absolute;inset:0;opacity:.02;background-image:linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px);background-size:52px 52px;}
-/* Nav */
-.nav{
-  position:relative;z-index:10;
-  padding:0;
-  border-bottom:1px solid rgba(255,255,255,.06);
-}
-.nav-in{
-  display:flex;align-items:center;justify-content:space-between;
-  height:64px;padding:0 28px;max-width:1200px;margin:0 auto;
-}
-.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.15rem;color:#fff;text-decoration:none;}
-.logo-mark{width:34px;height:34px;border-radius:9px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;transition:transform .3s;}
-.logo:hover .logo-mark{transform:rotate(-8deg);}
-.logo span{color:#FF6B35;}
-/* Main */
-main{
-  flex:1;display:flex;align-items:center;justify-content:center;
-  padding:40px 24px;position:relative;z-index:1;
-}
-.content{max-width:640px;width:100%;text-align:center;}
-/* 404 Number */
-.err-num{
-  font-family:'Fraunces',Georgia,serif;
-  font-size:clamp(6rem,18vw,10rem);
-  font-weight:900;
-  line-height:1;
-  letter-spacing:-.05em;
-  background:linear-gradient(135deg,#FF6B35 0%,#F5A623 50%,#00C896 100%);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  background-clip:text;
-  margin-bottom:8px;
-  animation:pulse404 3s ease infinite;
-}
-@keyframes pulse404{
-  0%,100%{opacity:1;}
-  50%{opacity:.82;}
-}
-.err-hindi{
-  font-size:1.4rem;
-  color:rgba(255,255,255,.25);
-  font-family:'Fraunces',serif;
-  margin-bottom:20px;
-  letter-spacing:.02em;
-}
-.err-title{
-  font-family:'Fraunces',Georgia,serif;
-  font-size:clamp(1.6rem,4vw,2.4rem);
-  font-weight:700;
-  color:#fff;
-  line-height:1.2;
-  margin-bottom:14px;
-  letter-spacing:-.015em;
-}
-.err-sub{
-  font-size:.97rem;
-  color:rgba(255,255,255,.48);
-  line-height:1.72;
-  margin-bottom:38px;
-  max-width:500px;
-  margin-left:auto;
-  margin-right:auto;
-}
-.err-sub strong{color:rgba(255,255,255,.8);}
-/* Actions */
-.err-actions{
-  display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:52px;
-}
-.btn{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:13px 26px;border-radius:50px;
-  font-size:.88rem;font-weight:600;
-  cursor:pointer;border:none;
-  transition:transform .22s cubic-bezier(.34,1.56,.64,1),box-shadow .22s;
-  font-family:'DM Sans',sans-serif;text-decoration:none;
-  -webkit-tap-highlight-color:transparent;
-}
-.btn:active{transform:scale(.95)!important;}
-.btn-primary{
-  background:linear-gradient(135deg,#FF6B35,#E55A25);
-  color:#fff;
-  box-shadow:0 4px 18px rgba(255,107,53,.42);
-}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(255,107,53,.55);}
-.btn-ghost{
-  background:rgba(255,255,255,.07);
-  border:1px solid rgba(255,255,255,.14);
-  color:rgba(255,255,255,.82);
-}
-.btn-ghost:hover{background:rgba(255,255,255,.13);color:#fff;}
-/* Quick Links */
-.quick-links{
-  border-top:1px solid rgba(255,255,255,.07);
-  padding-top:36px;
-  text-align:left;
-}
-.quick-title{
-  font-size:.66rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
-  color:rgba(255,255,255,.3);margin-bottom:18px;text-align:center;
-}
-.quick-grid{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;
-}
-.quick-item{
-  padding:14px 16px;
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.07);
-  border-radius:12px;
-  display:flex;align-items:center;gap:12px;
-  text-decoration:none;color:rgba(255,255,255,.72);
-  font-size:.85rem;font-weight:500;
-  transition:all .22s;
-}
-.quick-item:hover{
-  background:rgba(255,107,53,.09);
-  border-color:rgba(255,107,53,.28);
-  color:#fff;
-  transform:translateY(-2px);
-}
-.quick-item-icon{
-  width:36px;height:36px;border-radius:9px;
-  display:flex;align-items:center;justify-content:center;
-  font-size:1.1rem;flex-shrink:0;
-}
-/* Footer */
-.page-footer{
-  position:relative;z-index:1;
-  padding:20px 24px;border-top:1px solid rgba(255,255,255,.05);
-  text-align:center;
-}
-.page-footer p{font-size:.72rem;color:rgba(255,255,255,.22);line-height:1.6;}
-.page-footer a{color:rgba(255,107,53,.7);}
-/* Counter */
-.redirect-bar{
-  font-size:.78rem;color:rgba(255,255,255,.32);
-  margin-top:22px;margin-bottom:0;
-}
-/* Responsive */
-@media(max-width:480px){
-  .err-actions{flex-direction:column;align-items:center;}
-  .btn{width:100%;justify-content:center;max-width:300px;}
-  .nav-in{padding:0 16px;}
-}
+html{font-size:16px;-webkit-text-size-adjust:100%;min-height:100%}
+body{font-family:var(--ff-b);background:var(--nv);color:#fff;min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased;display:flex;flex-direction:column}
+::selection{background:var(--sf);color:#fff}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer;border:none;background:none;font-family:inherit;-webkit-tap-highlight-color:transparent}
+:focus-visible{outline:2px solid var(--sf);outline-offset:3px;border-radius:4px}
+.wrap{width:100%;max-width:1000px;margin:0 auto;padding:0 28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 24px;border-radius:50px;font-size:.875rem;font-weight:600;border:none;cursor:pointer;font-family:var(--ff-b);transition:transform .22s var(--spring),box-shadow .22s var(--smooth);text-decoration:none;white-space:nowrap;-webkit-tap-highlight-color:transparent}
+.btn:active{transform:scale(.95)!important}
+.btn-p{background:linear-gradient(135deg,var(--sf),var(--sf-d));color:#fff;box-shadow:0 4px 18px rgba(255,107,53,.4)}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(255,107,53,.52)}
+.btn-ghost{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);color:rgba(255,255,255,.88)}
+.btn-ghost:hover{background:rgba(255,255,255,.14)}
+.btn-tl{background:linear-gradient(135deg,var(--tl),var(--tl-d));color:#fff;box-shadow:0 4px 16px rgba(0,200,150,.36)}
+.btn-tl:hover{transform:translateY(-2px)}
+.bg{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.bg-glow{position:absolute;border-radius:50%;filter:blur(80px)}
+.bg-glow-1{top:-20%;left:-10%;width:55%;height:65%;background:radial-gradient(ellipse,rgba(255,107,53,.07),transparent 70%)}
+.bg-glow-2{bottom:-15%;right:-5%;width:50%;height:60%;background:radial-gradient(ellipse,rgba(0,200,150,.06),transparent 70%)}
+.bg-grid{position:absolute;inset:0;opacity:.018;background-image:linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px);background-size:56px 56px}
+.nav{background:rgba(15,23,41,.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.06);padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:64px;position:relative;z-index:10;flex-shrink:0}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.1rem;color:#fff}
+.logo-mark{width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;transition:transform .4s var(--spring)}
+.logo:hover .logo-mark{transform:rotate(-8deg) scale(1.08)}
+.logo span{color:var(--sf)}
+.main{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:52px 28px 44px;position:relative;z-index:2}
+.err-code{font-family:var(--ff-d);font-size:clamp(7rem,18vw,14rem);font-weight:900;line-height:1;letter-spacing:-.04em;background:linear-gradient(135deg,rgba(255,107,53,.28),rgba(245,166,35,.18) 50%,rgba(0,200,150,.14));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;user-select:none;animation:floatCode 4s ease-in-out infinite;margin-bottom:8px}
+@keyframes floatCode{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.err-title{font-family:var(--ff-d);font-size:clamp(1.5rem,4vw,2.6rem);font-weight:900;color:#fff;margin-bottom:12px;line-height:1.15;letter-spacing:-.015em}
+.err-title .hl{background:linear-gradient(135deg,var(--sf),var(--gd));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.err-sub{color:rgba(255,255,255,.44);font-size:.95rem;line-height:1.72;max-width:480px;margin:0 auto 28px}
+.err-sub strong{color:rgba(255,255,255,.82)}
+.err-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:36px}
+.search-wrap{max-width:500px;width:100%;margin:0 auto 32px;position:relative}
+.search-inp{width:100%;padding:13px 50px 13px 18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:50px;color:#fff;font-family:var(--ff-b);font-size:.875rem;outline:none;transition:border-color .2s,background .2s,box-shadow .2s}
+.search-inp::placeholder{color:rgba(255,255,255,.28)}
+.search-inp:focus{border-color:var(--sf);background:rgba(255,107,53,.06);box-shadow:0 0 0 3px rgba(255,107,53,.12)}
+.search-btn{position:absolute;right:6px;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;background:var(--sf);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform .22s var(--spring),background .18s}
+.search-btn:hover{transform:translateY(-50%) scale(1.08);background:var(--sf-d)}
+.cd-wrap{display:flex;flex-direction:column;align-items:center;gap:8px;margin-bottom:32px}
+.cd-txt{font-size:.78rem;color:rgba(255,255,255,.34)}
+.cd-ring{position:relative;width:64px;height:64px}
+.cd-ring svg{transform:rotate(-90deg)}
+.cd-ring circle{fill:none;stroke-width:4}
+.ring-bg{stroke:rgba(255,255,255,.08)}
+.ring-fill{stroke:var(--sf);stroke-linecap:round;stroke-dasharray:175.9;transition:stroke-dashoffset 1s linear}
+.cd-num{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--ff-d);font-size:1.4rem;font-weight:900;color:#fff}
+.cancel-btn{font-size:.7rem;color:rgba(255,255,255,.28);padding:3px 8px;transition:color .18s;border-radius:4px}
+.cancel-btn:hover{color:rgba(255,255,255,.68)}
+.float-word{position:absolute;font-family:var(--ff-h);color:rgba(255,255,255,.038);user-select:none;pointer-events:none;animation:float 6s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-16px) rotate(2deg)}}
+.qs-section{padding:36px 0 52px;position:relative;z-index:2}
+.qs-title{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.14em;color:rgba(255,255,255,.28);text-align:center;margin-bottom:18px}
+.qs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;max-width:880px;margin:0 auto}
+.qs-card{padding:16px 18px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:var(--r3);display:flex;align-items:center;gap:12px;cursor:pointer;transition:all .25s var(--spring);text-decoration:none}
+.qs-card:hover{background:rgba(255,107,53,.08);border-color:rgba(255,107,53,.24);transform:translateY(-2px)}
+.qs-card:active{transform:scale(.97)}
+.qs-icon{font-size:1.5rem;flex-shrink:0;transition:transform .3s var(--spring)}
+.qs-card:hover .qs-icon{transform:scale(1.15) rotate(-5deg)}
+.qs-name{font-size:.82rem;font-weight:600;color:#fff;margin-bottom:2px;line-height:1.3}
+.qs-amt{font-size:.7rem;color:var(--tl);font-weight:600}
+footer{background:rgba(6,12,24,.98);padding:24px 0 18px;color:rgba(255,255,255,.4);position:relative;z-index:2;flex-shrink:0}
+.ft-in{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.06)}
+.ft-logo{font-weight:800;font-size:1rem;color:#fff}
+.ft-logo span{color:var(--sf)}
+.ft-links{display:flex;flex-wrap:wrap;gap:4px 14px}
+.ft-links a{font-size:.73rem;color:rgba(255,255,255,.36);transition:color .18s}
+.ft-links a:hover{color:var(--sf)}
+.ft-copy{font-size:.67rem;color:rgba(255,255,255,.2);text-align:center;line-height:1.6}
+.ft-copy a{color:rgba(255,107,53,.48)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+.a1{animation:fadeUp .65s var(--smooth) .05s both}.a2{animation:fadeUp .65s var(--smooth) .15s both}.a3{animation:fadeUp .65s var(--smooth) .25s both}.a4{animation:fadeUp .65s var(--smooth) .35s both}.a5{animation:fadeUp .65s var(--smooth) .45s both}
+@media(max-width:480px){.wrap{padding:0 16px}.err-btns{flex-direction:column;align-items:center}.err-btns .btn{width:100%;max-width:260px}.qs-grid{grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body>
 <div class="bg" aria-hidden="true">
-  <div class="bg-glow-1"></div>
-  <div class="bg-glow-2"></div>
-  <div class="bg-grid"></div>
+  <div class="bg-glow bg-glow-1"></div><div class="bg-glow bg-glow-2"></div><div class="bg-grid"></div>
+  <span class="float-word" style="top:14%;left:4%;font-size:1.3rem;animation-delay:0s">सरकारी योजना</span>
+  <span class="float-word" style="top:62%;left:2%;font-size:.95rem;animation-delay:1.5s">मुफ़्त जाँच</span>
+  <span class="float-word" style="top:24%;right:4%;font-size:1rem;animation-delay:.8s">अपना हक़</span>
+  <span class="float-word" style="bottom:28%;right:3%;font-size:.85rem;animation-delay:2s">पात्रता</span>
 </div>
-
-<nav class="nav" aria-label="Main navigation">
-  <div class="nav-in">
-    <a href="/" class="logo" aria-label="TheBharatAI – Return Home">
-      <div class="logo-mark" aria-hidden="true">
-        <svg width="16" height="16" viewBox="0 0 20 20" fill="none">
-          <path d="M3 16L10 4L17 16" stroke="#FF6B35" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle cx="10" cy="10.5" r="2" fill="#00C896"/>
-        </svg>
-      </div>
-      The<span>Bharat</span>AI
-    </a>
-    <a href="/#haq-engine" class="btn btn-primary" style="padding:9px 20px;font-size:.82rem;">Check Eligibility Free →</a>
-  </div>
+<nav class="nav">
+  <a href="/" class="logo">
+    <div class="logo-mark"><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><path d="M3 16L10 4L17 16" stroke="#FF6B35" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 13h6" stroke="#F5A623" stroke-width="1.5" stroke-linecap="round"/><circle cx="10" cy="10.5" r="2" fill="#00C896"/></svg></div>
+    <span>The<span>Bharat</span>AI</span>
+  </a>
+  <a href="/#haq-engine" class="btn btn-p" style="font-size:.8rem;padding:9px 18px;">Check Eligibility Free →</a>
 </nav>
-
-<main>
-  <div class="content">
-    <div class="err-num" aria-hidden="true">404</div>
-    <div class="err-hindi" aria-hidden="true">पृष्ठ नहीं मिला</div>
-    <h1 class="err-title">Page Not Found</h1>
-    <p class="err-sub">
-      The page you're looking for doesn't exist or may have been moved.
-      But don't worry — <strong>1,500+ government schemes</strong> are still waiting for you on our homepage.
-      Check what you qualify for in 60 seconds, free.
-    </p>
-    <div class="err-actions">
-      <a href="/" class="btn btn-primary">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
-        Back to Home
-      </a>
-      <a href="/#haq-engine" class="btn btn-ghost">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-        Check Eligibility Free
-      </a>
+<main class="main" role="main" aria-labelledby="err-heading">
+  <div class="err-code a1" aria-hidden="true">404</div>
+  <h1 class="err-title a2" id="err-heading">Page <span class="hl">Not Found</span></h1>
+  <p class="err-sub a3">The page you're looking for has moved or never existed. <strong>Your government scheme benefits are still waiting!</strong></p>
+  <div class="search-wrap a3">
+    <input class="search-inp" type="text" id="searchInp" placeholder="Search schemes… PM Kisan, Mudra Loan…" aria-label="Search government schemes" autocomplete="off">
+    <button class="search-btn" onclick="doSearch()" aria-label="Search"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></button>
+  </div>
+  <div class="err-btns a4">
+    <a href="/" class="btn btn-p" onclick="haptic()">🏠 Go to Homepage</a>
+    <a href="/#haq-engine" class="btn btn-tl" onclick="haptic()">🔍 Check Eligibility Free</a>
+    <button class="btn btn-ghost" onclick="history.back();haptic()">← Go Back</button>
+  </div>
+  <div class="cd-wrap a5">
+    <div class="cd-txt">Auto-redirecting in <span id="secs">10</span>s</div>
+    <div class="cd-ring">
+      <svg width="64" height="64" viewBox="0 0 64 64" aria-hidden="true">
+        <circle class="ring-bg" cx="32" cy="32" r="28"/>
+        <circle class="ring-fill" id="ringFill" cx="32" cy="32" r="28"/>
+      </svg>
+      <div class="cd-num" id="cdNum">10</div>
     </div>
-
-    <div class="quick-links">
-      <div class="quick-title">Popular Pages</div>
-      <div class="quick-grid">
-        <a href="/#haq-engine" class="quick-item">
-          <div class="quick-item-icon" style="background:rgba(255,107,53,.12);">🔍</div>
-          <span>Haq Engine</span>
-        </a>
-        <a href="/#schemes" class="quick-item">
-          <div class="quick-item-icon" style="background:rgba(0,200,150,.1);">📋</div>
-          <span>Browse Schemes</span>
-        </a>
-        <a href="/#states" class="quick-item">
-          <div class="quick-item-icon" style="background:rgba(245,166,35,.1);">🗺️</div>
-          <span>State Schemes</span>
-        </a>
-        <a href="/about.html" class="quick-item">
-          <div class="quick-item-icon" style="background:rgba(59,130,246,.1);">👤</div>
-          <span>About</span>
-        </a>
-        <a href="/disclaimer.html" class="quick-item">
-          <div class="quick-item-icon" style="background:rgba(255,255,255,.05);">⚖️</div>
-          <span>Disclaimer</span>
-        </a>
-        <a href="mailto:workmailkartikeya@gmail.com" class="quick-item">
-          <div class="quick-item-icon" style="background:rgba(255,255,255,.05);">📧</div>
-          <span>Contact Us</span>
-        </a>
-      </div>
-    </div>
-
-    <p class="redirect-bar" id="redirectBar">Redirecting to homepage in <span id="countdown">10</span> seconds…</p>
+    <button class="cancel-btn" onclick="cancelRedirect()" aria-label="Cancel auto redirect">Cancel ✕</button>
   </div>
 </main>
-
-<div class="page-footer">
-  <p>
-    © 2025–2026 TheBharatAI &nbsp;·&nbsp; Independent platform, NOT affiliated with Govt of India &nbsp;·&nbsp;
-    <a href="/disclaimer.html">Disclaimer</a> &nbsp;·&nbsp;
-    <a href="/privacy-policy.html">Privacy</a>
-  </p>
-</div>
-
+<section class="qs-section">
+  <div class="wrap">
+    <div class="qs-title">Popular Government Schemes — All Verified Jan 2026</div>
+    <div class="qs-grid">
+      <a href="/#schemes" class="qs-card" onclick="haptic()"><span class="qs-icon">🌾</span><div><div class="qs-name">PM Kisan Yojana</div><div class="qs-amt">₹6,000/year</div></div></a>
+      <a href="/#schemes" class="qs-card" onclick="haptic()"><span class="qs-icon">🏥</span><div><div class="qs-name">Ayushman Bharat</div><div class="qs-amt">₹5L/year health</div></div></a>
+      <a href="/#schemes" class="qs-card" onclick="haptic()"><span class="qs-icon">💼</span><div><div class="qs-name">PM Mudra Yojana</div><div class="qs-amt">Up to ₹10 Lakh</div></div></a>
+      <a href="/#schemes" class="qs-card" onclick="haptic()"><span class="qs-icon">🏠</span><div><div class="qs-name">PM Awas Yojana</div><div class="qs-amt">₹1.3–1.5 Lakh</div></div></a>
+      <a href="/#schemes" class="qs-card" onclick="haptic()"><span class="qs-icon">🎓</span><div><div class="qs-name">NSP Scholarship</div><div class="qs-amt">₹36,000/year</div></div></a>
+      <a href="/#schemes" class="qs-card" onclick="haptic()"><span class="qs-icon">🔨</span><div><div class="qs-name">PM Vishwakarma</div><div class="qs-amt">₹3L + ₹15k</div></div></a>
+    </div>
+    <div style="text-align:center;margin-top:24px;">
+      <a href="/#haq-engine" class="btn btn-p" style="font-size:.95rem;padding:13px 30px;" onclick="haptic()">Find All Schemes I Qualify For — Free →</a>
+    </div>
+    <p style="text-align:center;font-size:.68rem;color:rgba(255,255,255,.26);margin-top:14px;line-height:1.6;">⚠️ TheBharatAI is NOT affiliated with Govt of India. For informational purposes only.</p>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <div class="ft-in">
+      <div class="ft-logo">The<span>Bharat</span>AI</div>
+      <div class="ft-links"><a href="/">Home</a><a href="/#schemes">Schemes</a><a href="/about.html">About</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy-policy.html">Privacy</a></div>
+    </div>
+    <div class="ft-copy">© 2025–2026 TheBharatAI · NOT affiliated with Govt of India · <a href="/disclaimer.html">Full Disclaimer</a></div>
+  </div>
+</footer>
 <script>
-/* Auto-redirect countdown */
-var count = 10;
-var el = document.getElementById('countdown');
-var iv = setInterval(function() {
-  count--;
-  if (el) el.textContent = count;
-  if (count <= 0) {
-    clearInterval(iv);
-    window.location.href = '/';
+'use strict';
+function haptic(ms){try{if(navigator.vibrate)navigator.vibrate(ms||8)}catch(e){}}
+var CIRC=2*Math.PI*28,secs=10,cancelled=false;
+var ring=document.getElementById('ringFill'),secsEl=document.getElementById('secs'),cdNum=document.getElementById('cdNum');
+ring.style.strokeDashoffset='0';
+var tid=setInterval(function(){
+  if(cancelled){clearInterval(tid);return}
+  secs--;secsEl.textContent=secs;cdNum.textContent=secs;
+  ring.style.strokeDashoffset=(CIRC*(10-secs)/10).toFixed(2);
+  if(secs<=0){clearInterval(tid);window.location.href='/'}
+},1000);
+function cancelRedirect(){cancelled=true;document.querySelector('.cd-wrap').style.opacity='.3';haptic(5)}
+document.getElementById('searchInp').addEventListener('keydown',function(e){if(e.key==='Enter')doSearch()});
+function doSearch(){
+  var q=document.getElementById('searchInp').value.trim().toLowerCase();
+  if(!q)return;haptic();
+  var map=[
+    {k:['kisan','farmer'],url:'/#schemes'},{k:['mudra','loan','business'],url:'/#schemes'},
+    {k:['ayushman','health'],url:'/#schemes'},{k:['awas','house'],url:'/#schemes'},
+    {k:['scholarship','student','nsp'],url:'/#schemes'},{k:['vishwakarma','artisan'],url:'/#schemes'},
+    {k:['shram','labour','labor'],url:'/#schemes'},{k:['sukanya','girl'],url:'/#schemes'},
+  ];
+  for(var i=0;i<map.length;i++){
+    for(var j=0;j<map[i].k.length;j++){
+      if(q.includes(map[i].k[j])){window.location.href=map[i].url;return}
+    }
   }
-}, 1000);
-/* Haptic on btn click */
-document.querySelectorAll('.btn').forEach(function(b) {
-  b.addEventListener('click', function() {
-    try { if (navigator.vibrate) navigator.vibrate(8); } catch(e) {}
-  });
-});
+  window.location.href='/#haq-engine';
+}
+if('serviceWorker'in navigator)window.addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').catch(function(){})});
 </script>
 </body>
 </html>
