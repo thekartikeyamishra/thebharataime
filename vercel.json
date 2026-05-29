@@ -1,191 +1,78 @@
 {
   "version": 2,
-  "name": "thebharatai",
-
+  "buildCommand": "npm run build",
+  "outputDirectory": ".",
+  "installCommand": "npm install",
+  "framework": null,
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/api/report-scheme",  "destination": "/api/report-scheme.js" },
+    { "source": "/api/search-schemes", "destination": "/api/search-schemes.js" }
+  ],
+  "redirects": [
+    { "source": "/sitemap",    "destination": "/sitemap-index.xml",   "permanent": true },
+    { "source": "/disclaimer", "destination": "/disclaimer.html",     "permanent": true },
+    { "source": "/privacy",    "destination": "/privacy-policy.html", "permanent": true },
+    { "source": "/terms",      "destination": "/terms.html",          "permanent": true },
+    { "source": "/about",      "destination": "/about.html",          "permanent": true }
+  ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        {
-          "key": "X-Frame-Options",
-          "value": "DENY"
-        },
-        {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
-        },
-        {
-          "key": "X-DNS-Prefetch-Control",
-          "value": "on"
-        },
-        {
-          "key": "X-XSS-Protection",
-          "value": "1; mode=block"
-        },
-        {
-          "key": "Referrer-Policy",
-          "value": "strict-origin-when-cross-origin"
-        },
-        {
-          "key": "Permissions-Policy",
-          "value": "camera=(), microphone=(), geolocation=(), payment=(self), usb=(), interest-cohort=()"
-        },
-        {
-          "key": "Strict-Transport-Security",
-          "value": "max-age=63072000; includeSubDomains; preload"
-        },
-        {
-          "key": "Content-Security-Policy",
-          "value": "default-src 'self' https:; script-src 'self' 'unsafe-inline' https://pagead2.googlesyndication.com https://www.googletagmanager.com https://fonts.googleapis.com https://adservice.google.com https://googlesyndication.com https://ep2.adtrafficquality.google; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; frame-src https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://www.googletagmanager.com; connect-src 'self' https:; worker-src 'self'; manifest-src 'self';"
-        },
-        {
-          "key": "Cross-Origin-Opener-Policy",
-          "value": "same-origin-allow-popups"
-        }
+        { "key": "X-Frame-Options",           "value": "DENY" },
+        { "key": "X-Content-Type-Options",    "value": "nosniff" },
+        { "key": "X-XSS-Protection",          "value": "1; mode=block" },
+        { "key": "Referrer-Policy",           "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy",        "value": "camera=(), microphone=(), geolocation=(), payment=()" },
+        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" },
+        { "key": "Content-Security-Policy",   "value": "default-src 'self' https:; script-src 'self' 'unsafe-inline' https://pagead2.googlesyndication.com https://www.googletagmanager.com https://fonts.googleapis.com https://adservice.google.com https://ep2.adtrafficquality.google; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; frame-src https://googleads.g.doubleclick.net https://tpc.googlesyndication.com; connect-src 'self' https:; worker-src 'self'" }
       ]
+    },
+    {
+      "source": "/(.*)\\.html",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=3600, stale-while-revalidate=86400" }]
+    },
+    {
+      "source": "/(hi|mr|te|ta)/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=604800" },
+        { "key": "Vary",          "value": "Accept-Language" }
+      ]
+    },
+    {
+      "source": "/icons/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    },
+    {
+      "source": "/og-image.png",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=2592000" }]
     },
     {
       "source": "/sw.js",
       "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=0, must-revalidate"
-        },
-        {
-          "key": "Service-Worker-Allowed",
-          "value": "/"
-        }
+        { "key": "Cache-Control",           "value": "no-cache, no-store, must-revalidate" },
+        { "key": "Service-Worker-Allowed",  "value": "/" }
       ]
     },
     {
       "source": "/manifest.json",
       "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=86400"
-        },
-        {
-          "key": "Content-Type",
-          "value": "application/manifest+json"
-        }
+        { "key": "Cache-Control", "value": "public, max-age=86400" },
+        { "key": "Content-Type",  "value": "application/manifest+json" }
       ]
     },
     {
-      "source": "/sitemap(.*).xml",
+      "source": "/sitemap(.*)\\.xml",
       "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, s-maxage=43200, stale-while-revalidate=3600"
-        },
-        {
-          "key": "Content-Type",
-          "value": "application/xml"
-        }
+        { "key": "Cache-Control", "value": "public, max-age=86400" },
+        { "key": "Content-Type",  "value": "application/xml; charset=utf-8" }
       ]
     },
     {
-      "source": "/robots.txt",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=86400"
-        }
-      ]
-    },
-    {
-      "source": "/llms.txt",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=43200"
-        },
-        {
-          "key": "Content-Type",
-          "value": "text/plain; charset=utf-8"
-        }
-      ]
-    },
-    {
-      "source": "/icons/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "/og-image.png",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=86400"
-        }
-      ]
+      "source": "/api/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "no-store" }]
     }
-  ],
-
-  "redirects": [
-    {
-      "source": "/home",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/index.html",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/privacy",
-      "destination": "/privacy-policy.html",
-      "permanent": true
-    },
-    {
-      "source": "/terms",
-      "destination": "/terms.html",
-      "permanent": true
-    },
-    {
-      "source": "/disclaimer",
-      "destination": "/disclaimer.html",
-      "permanent": true
-    },
-    {
-      "source": "/about",
-      "destination": "/about.html",
-      "permanent": true
-    },
-    {
-      "source": "/schemes",
-      "destination": "/hi/schemes/",
-      "permanent": false
-    },
-    {
-      "source": "/haq",
-      "destination": "/#haq-engine",
-      "permanent": false
-    },
-    {
-      "source": "/haq-engine",
-      "destination": "/#haq-engine",
-      "permanent": false
-    }
-  ],
-
-  "rewrites": [
-    {
-      "source": "/share-target",
-      "destination": "/"
-    }
-  ],
-
-  "cleanUrls": true,
-  "trailingSlash": false,
-
-  "build": {
-    "env": {
-      "NODE_ENV": "production"
-    }
-  }
+  ]
 }

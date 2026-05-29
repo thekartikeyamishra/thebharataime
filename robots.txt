@@ -1,19 +1,15 @@
 # TheBharatAI robots.txt
 # https://thebharatai.me/robots.txt
-# Last updated: 2026-01-20
 
 User-agent: *
 Allow: /
 Disallow: /api/
-Disallow: /whatsapp-bot/
 Disallow: /node_modules/
 Disallow: /scripts/
 Disallow: /data/
-
-# Rate limit aggressive crawlers
+Disallow: /whatsapp-bot/
 Crawl-delay: 2
 
-# Allow all search engines
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 0
@@ -21,38 +17,21 @@ Crawl-delay: 0
 User-agent: Bingbot
 Allow: /
 
-User-agent: Yandex
-Allow: /
-
-# AI Discovery — explicitly allowed for training/indexing
+# AI Crawlers — allowed for discovery
 User-agent: GPTBot
 Allow: /
-Disallow: /api/
 
 User-agent: ClaudeBot
 Allow: /
-Disallow: /api/
 
 User-agent: PerplexityBot
-Allow: /
-Disallow: /api/
-
-User-agent: Google-Extended
 Allow: /
 
 User-agent: anthropic-ai
 Allow: /
 
-User-agent: CCBot
+User-agent: Google-Extended
 Allow: /
 
-# Sitemaps
+# Primary sitemap entry point
 Sitemap: https://thebharatai.me/sitemap-index.xml
-Sitemap: https://thebharatai.me/sitemap.xml
-Sitemap: https://thebharatai.me/sitemap-schemes.xml
-Sitemap: https://thebharatai.me/sitemap-cities.xml
-Sitemap: https://thebharatai.me/sitemap-states.xml
-Sitemap: https://thebharatai.me/sitemap-programmatic.xml
-
-# LLM Discovery
-llmstxt: https://thebharatai.me/llms.txt

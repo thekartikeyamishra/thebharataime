@@ -1,38 +1,23 @@
 {
   "name": "thebharatai",
-  "version": "2.0.0",
-  "description": "India's #1 free AI government scheme eligibility engine. 1500+ schemes. 4 languages. WhatsApp bot. 1M+ programmatic URLs.",
+  "version": "3.0.0",
+  "description": "India's #1 free AI government scheme eligibility engine",
   "private": true,
   "author": {
     "name": "Kartikeya Mishra",
-    "email": "workmailkartikeya@gmail.com",
-    "url": "https://www.linkedin.com/in/thekartikeyamishra/"
+    "email": "workmailkartikeya@gmail.com"
   },
-  "homepage": "https://thebharatai.me",
-  "license": "UNLICENSED",
-  "engines": { "node": ">=18.0.0", "npm": ">=9.0.0" },
+  "engines": { "node": ">=18.0.0" },
   "scripts": {
-    "setup":       "npm install && node scripts/generate-assets.js && echo Setup complete. Run: npm run dev",
-    "dev":         "npx live-server --port=3000 --host=localhost --open=/index.html --ignore=node_modules,scripts,.git,hi,mr,te,ta,whatsapp-bot",
-    "start":       "npm run dev",
-    "generate":    "node scripts/generate-assets.js",
-    "build":       "node scripts/generate-assets.js && node scripts/generate-programmatic.js && node scripts/generate-sitemap-v2.js",
-    "build:pages": "node scripts/generate-programmatic.js",
-    "build:sitemap":"node scripts/generate-sitemap-v2.js",
-    "validate":    "node scripts/validate.js",
-    "bot":         "cd whatsapp-bot && node bot.js",
-    "bot:install": "cd whatsapp-bot && npm install",
-    "deploy:vercel":"npx vercel --prod",
-    "deploy:netlify":"npx netlify deploy --prod --dir=.",
-    "clean:pages": "rm -rf hi mr te ta"
+    "dev":        "npx live-server --port=3000 --host=localhost --open=/index.html --ignore=node_modules,scripts,.git,hi,mr,te,ta",
+    "start":      "npm run dev",
+    "build":      "node scripts/generate-assets.js && node scripts/generate-programmatic.js && node scripts/generate-sitemap-v2.js",
+    "validate":   "node scripts/validate.js",
+    "setup":      "npm install && node scripts/generate-assets.js"
   },
   "devDependencies": {
+    "dotenv":      "^16.4.5",
     "live-server": "^1.2.2",
     "pngjs":       "^7.0.0"
-  },
-  "keywords": [
-    "government-schemes", "india", "eligibility-checker", "pm-kisan",
-    "ayushman-bharat", "bharat", "hindi", "vernacular", "free-tool",
-    "whatsapp-bot", "programmatic-seo", "multilingual"
-  ]
+  }
 }

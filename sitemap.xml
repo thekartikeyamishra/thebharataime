@@ -1,89 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-
-  <!-- ═══ HOMEPAGE ═══ -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://thebharatai.me/</loc>
     <lastmod>2026-01-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://thebharatai.me/en/"/>
-    <xhtml:link rel="alternate" hreflang="hi" href="https://thebharatai.me/hi/"/>
-    <xhtml:link rel="alternate" hreflang="mr" href="https://thebharatai.me/mr/"/>
-    <xhtml:link rel="alternate" hreflang="te" href="https://thebharatai.me/te/"/>
-    <xhtml:link rel="alternate" hreflang="ta" href="https://thebharatai.me/ta/"/>
-    <xhtml:link rel="alternate" hreflang="bn" href="https://thebharatai.me/bn/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://thebharatai.me/"/>
   </url>
-
-  <!-- ═══ LANGUAGE ROOTS ═══ -->
-  <url><loc>https://thebharatai.me/en/</loc><lastmod>2026-01-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://thebharatai.me/hi/</loc><lastmod>2026-01-20</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-  <url><loc>https://thebharatai.me/mr/</loc><lastmod>2026-01-15</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://thebharatai.me/te/</loc><lastmod>2026-01-15</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://thebharatai.me/ta/</loc><lastmod>2026-01-15</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://thebharatai.me/bn/</loc><lastmod>2026-01-15</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://thebharatai.me/kn/</loc><lastmod>2026-01-15</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://thebharatai.me/gu/</loc><lastmod>2026-01-15</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://thebharatai.me/pa/</loc><lastmod>2026-01-15</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://thebharatai.me/or/</loc><lastmod>2026-01-15</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
-
-  <!-- ═══ TOOL PAGES ═══ -->
-  <url><loc>https://thebharatai.me/haq-engine/</loc><lastmod>2026-01-20</lastmod><changefreq>weekly</changefreq><priority>0.95</priority></url>
-  <url><loc>https://thebharatai.me/eligibility-checker/</loc><lastmod>2026-01-20</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
-
-  <!-- ═══ SCHEME CATEGORY PAGES ═══ -->
-  <url><loc>https://thebharatai.me/hi/schemes/</loc><lastmod>2026-01-18</lastmod><changefreq>daily</changefreq><priority>0.92</priority></url>
-  <url><loc>https://thebharatai.me/hi/scholarships/</loc><lastmod>2026-01-15</lastmod><changefreq>weekly</changefreq><priority>0.88</priority></url>
-  <url><loc>https://thebharatai.me/hi/loans/</loc><lastmod>2026-01-15</lastmod><changefreq>weekly</changefreq><priority>0.88</priority></url>
-  <url><loc>https://thebharatai.me/hi/subsidies/</loc><lastmod>2026-01-15</lastmod><changefreq>weekly</changefreq><priority>0.87</priority></url>
-  <url><loc>https://thebharatai.me/hi/health-schemes/</loc><lastmod>2026-01-15</lastmod><changefreq>weekly</changefreq><priority>0.87</priority></url>
-  <url><loc>https://thebharatai.me/hi/farmer-schemes/</loc><lastmod>2026-01-18</lastmod><changefreq>daily</changefreq><priority>0.90</priority></url>
-  <url><loc>https://thebharatai.me/hi/women-schemes/</loc><lastmod>2026-01-15</lastmod><changefreq>weekly</changefreq><priority>0.88</priority></url>
-  <url><loc>https://thebharatai.me/hi/student-schemes/</loc><lastmod>2026-01-15</lastmod><changefreq>weekly</changefreq><priority>0.88</priority></url>
-  <url><loc>https://thebharatai.me/hi/msme-schemes/</loc><lastmod>2026-01-15</lastmod><changefreq>weekly</changefreq><priority>0.87</priority></url>
-
-  <!-- ═══ FLAGSHIP SCHEME PAGES ═══ -->
-  <url><loc>https://thebharatai.me/hi/schemes/pm-kisan-eligibility-apply</loc><lastmod>2026-01-15</lastmod><changefreq>weekly</changefreq><priority>0.95</priority></url>
-  <url><loc>https://thebharatai.me/hi/schemes/pm-mudra-yojana-eligibility</loc><lastmod>2026-01-10</lastmod><changefreq>weekly</changefreq><priority>0.92</priority></url>
-  <url><loc>https://thebharatai.me/hi/schemes/ayushman-bharat-eligibility</loc><lastmod>2026-01-15</lastmod><changefreq>weekly</changefreq><priority>0.93</priority></url>
-  <url><loc>https://thebharatai.me/hi/schemes/pm-awas-yojana-apply</loc><lastmod>2025-12-20</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
-  <url><loc>https://thebharatai.me/hi/schemes/pm-ujjwala-free-lpg</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.88</priority></url>
-  <url><loc>https://thebharatai.me/hi/schemes/pm-vishwakarma-yojana</loc><lastmod>2026-01-08</lastmod><changefreq>weekly</changefreq><priority>0.88</priority></url>
-  <url><loc>https://thebharatai.me/hi/schemes/nsp-scholarship-apply</loc><lastmod>2025-12-15</lastmod><changefreq>weekly</changefreq><priority>0.87</priority></url>
-  <url><loc>https://thebharatai.me/hi/schemes/e-shram-card-registration</loc><lastmod>2026-01-12</lastmod><changefreq>weekly</changefreq><priority>0.87</priority></url>
-  <url><loc>https://thebharatai.me/hi/schemes/stand-up-india-loan</loc><lastmod>2025-11-20</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://thebharatai.me/hi/schemes/sukanya-samriddhi-yojana</loc><lastmod>2026-01-10</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://thebharatai.me/hi/schemes/atal-pension-yojana</loc><lastmod>2025-12-28</lastmod><changefreq>monthly</changefreq><priority>0.84</priority></url>
-  <url><loc>https://thebharatai.me/hi/schemes/up-free-laptop-yojana</loc><lastmod>2025-10-15</lastmod><changefreq>monthly</changefreq><priority>0.82</priority></url>
-
-  <!-- Category-wise programmatic scheme pages -->
-  <url><loc>https://thebharatai.me/hi/schemes/category/farmers</loc><lastmod>2026-01-18</lastmod><changefreq>weekly</changefreq><priority>0.88</priority></url>
-  <url><loc>https://thebharatai.me/hi/schemes/category/women</loc><lastmod>2026-01-15</lastmod><changefreq>weekly</changefreq><priority>0.87</priority></url>
-  <url><loc>https://thebharatai.me/hi/schemes/category/students</loc><lastmod>2026-01-15</lastmod><changefreq>weekly</changefreq><priority>0.87</priority></url>
-  <url><loc>https://thebharatai.me/hi/schemes/category/msme</loc><lastmod>2026-01-15</lastmod><changefreq>weekly</changefreq><priority>0.86</priority></url>
-  <url><loc>https://thebharatai.me/hi/schemes/category/sc-st</loc><lastmod>2026-01-15</lastmod><changefreq>weekly</changefreq><priority>0.86</priority></url>
-  <url><loc>https://thebharatai.me/hi/schemes/category/obc</loc><lastmod>2026-01-15</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://thebharatai.me/hi/schemes/category/ews</loc><lastmod>2026-01-15</lastmod><changefreq>weekly</changefreq><priority>0.84</priority></url>
-  <url><loc>https://thebharatai.me/hi/schemes/category/differently-abled</loc><lastmod>2026-01-15</lastmod><changefreq>weekly</changefreq><priority>0.83</priority></url>
-  <url><loc>https://thebharatai.me/hi/schemes/category/senior-citizens</loc><lastmod>2026-01-15</lastmod><changefreq>weekly</changefreq><priority>0.83</priority></url>
-
-  <!-- ═══ ARTICLE / BLOG PAGES ═══ -->
-  <url><loc>https://thebharatai.me/articles/</loc><lastmod>2026-01-20</lastmod><changefreq>weekly</changefreq><priority>0.88</priority></url>
-  <url><loc>https://thebharatai.me/articles/pm-kisan-complete-guide-2025</loc><lastmod>2026-01-15</lastmod><changefreq>monthly</changefreq><priority>0.90</priority></url>
-  <url><loc>https://thebharatai.me/articles/mudra-loan-women-bihar-up</loc><lastmod>2026-01-12</lastmod><changefreq>monthly</changefreq><priority>0.88</priority></url>
-  <url><loc>https://thebharatai.me/articles/ayushman-bharat-eligibility-card</loc><lastmod>2026-01-10</lastmod><changefreq>monthly</changefreq><priority>0.88</priority></url>
-  <url><loc>https://thebharatai.me/articles/up-free-laptop-yojana-apply</loc><lastmod>2026-01-08</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://thebharatai.me/articles/pm-awas-yojana-gramin-2025</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://thebharatai.me/articles/pm-vishwakarma-artisan-guide</loc><lastmod>2026-01-08</lastmod><changefreq>monthly</changefreq><priority>0.84</priority></url>
-
-  <!-- ═══ LEGAL PAGES (Required for E-E-A-T) ═══ -->
-  <url><loc>https://thebharatai.me/disclaimer.html</loc><lastmod>2026-01-01</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://thebharatai.me/privacy-policy.html</loc><lastmod>2026-01-01</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://thebharatai.me/terms.html</loc><lastmod>2026-01-01</lastmod><changefreq>monthly</changefreq><priority>0.55</priority></url>
-  <url><loc>https://thebharatai.me/about.html</loc><lastmod>2026-01-15</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
-  <url><loc>https://thebharatai.me/contact.html</loc><lastmod>2026-01-01</lastmod><changefreq>monthly</changefreq><priority>0.55</priority></url>
-
+  <url>
+    <loc>https://thebharatai.me/about.html</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://thebharatai.me/disclaimer.html</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://thebharatai.me/privacy-policy.html</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://thebharatai.me/terms.html</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://thebharatai.me/hi/</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://thebharatai.me/mr/</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.88</priority>
+  </url>
+  <url>
+    <loc>https://thebharatai.me/te/</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.88</priority>
+  </url>
+  <url>
+    <loc>https://thebharatai.me/ta/</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.88</priority>
+  </url>
 </urlset>
