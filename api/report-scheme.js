@@ -14,14 +14,14 @@
  *
  * Environment Variables (set in Vercel dashboard):
  *   RESEND_API_KEY  — optional, for email alerts on new reports
- *   REPORT_EMAIL    — email to receive reports (default: workmailkartikeya@gmail.com)
+ *   REPORT_EMAIL    — email to receive reports (default: help@thebharatai.me)
  *   ALLOWED_ORIGIN  — CORS origin (default: https://thebharatai.me)
  *
  * Deploy: This file auto-deploys as /api/report-scheme when pushed to Vercel.
  */
 
 const ALLOWED_ORIGIN = process.env.ALLOWED_ORIGIN || 'https://thebharatai.me';
-const REPORT_EMAIL   = process.env.REPORT_EMAIL   || 'workmailkartikeya@gmail.com';
+const REPORT_EMAIL   = process.env.REPORT_EMAIL   || 'help@thebharatai.me';
 const RESEND_KEY     = process.env.RESEND_API_KEY  || '';
 
 // Simple in-memory rate limit (per Lambda instance)
